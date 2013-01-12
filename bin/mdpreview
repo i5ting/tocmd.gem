@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby  
+  
+require 'mdpreview'  
+puts Mdpreview.hi(ARGV[0])
