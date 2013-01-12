@@ -2,6 +2,7 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'mdpreview/version'
+require 'rake'
 
 Gem::Specification.new do |gem|
   gem.name          = "mdpreview"
@@ -11,8 +12,10 @@ Gem::Specification.new do |gem|
   gem.description   = %q{dsdfn}
   gem.summary       = %q{dsfsdf}
   gem.homepage      = ""
-
-  gem.files         = `git ls-files`.split($/)
+  gem.files         = FileList['lib/**/*.rb',
+                        'bin/*',
+                        'vendor/**/**/**',
+                        'test/**/*'].to_a
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]

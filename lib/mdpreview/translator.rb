@@ -3,12 +3,7 @@ class Mdpreview::Translator
     @language = language  
   end  
   
-  def hi  
-    case @language  
-    when :spanish  
-      "hola mundo"  
-    else  
-      "hello world"  
-    end  
+  def hi
+      p "hello world #{@language}"  
   end  
 end  
