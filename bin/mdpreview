@@ -32,16 +32,16 @@ option_parser = OptionParser.new do |opts|
   
   # Option 作为flag，带argument，用于将argument作为数值解析，比如"name"信息
   #下面的“value”就是用户使用时输入的argument
-  opts.on('-f FileNAME', '--name Name', 'Pass-in file name') do |value|
+  opts.on('-f sourceFileNAME', '--name sourceFileNAME', 'Pass-in source file name') do |value|
     # options[:fname] = value
    
     Mdpreview.hi(path+'/'+value)
   end
 
   # Option 作为flag，带一组用逗号分割的arguments，用于将arguments作为数组解析
-  opts.on('-a A,B', '--array A,B', Array, 'List of arguments') do |value|
-    options[:array] = value
-  end
+  # opts.on('-a A,B', '--array A,B', Array, 'List of arguments') do |value|
+  #    options[:array] = value
+  #  end
 end.parse!
 
 # puts options.inspect

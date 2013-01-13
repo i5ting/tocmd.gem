@@ -7,11 +7,28 @@
     <link rel="stylesheet" href="css/style.css" />
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/mdpe.js"></script>
-    <script type="text/javascript" src="js/ace.js"></script>
-    <script type="text/javascript" src="js/mode-markdown.js"></script>
-    <script type="text/javascript" src="js/theme-twilight.js"></script>
-    <script type="text/javascript" src="js/theme-textmate.js"></script> 
+	<script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    
+	<script>
+	var require = {
+	    baseUrl: window.location.protocol + "//" + window.location.host + window.location.pathname.split("/").slice(0, -1).join("/"),
+	    paths: {
+	        ace: "lib/ace"
+	    }
+	};
+	
+	</script>
     <script type="text/javascript" src="js/Markdown.Converter.js"></script>
+	<style type="text/css" media="screen">
+	    #input { 
+	        position: absolute;
+	        top: 0;
+	        right: 0;
+	        bottom: 0;
+	        left: 0;
+	    }
+	</style>
+	
 </head>
 <body>
 <div id="bar">

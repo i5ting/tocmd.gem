@@ -131,6 +131,9 @@ function load_source(file) {
     reader.readAsText(file);
 }
 
+
+
+
 var editor = null;
 var can_update = true;
 $(document).ready(function () {
@@ -138,18 +141,21 @@ $(document).ready(function () {
         onresize();
     });
 	
-
-	
     editor = ace.edit("input");
-    editor.getSession().setValue("the new text here");
+    editor.getSession().setValue("loading");
     editor.getSession().setTabSize(4);
     editor.getSession().setUseSoftTabs(true);
     document.getElementById('input').style.fontSize='14px';    
     editor.getSession().setUseWrapMode(true);
     editor.setShowPrintMargin(true);    
-    var mode = require("ace/mode/markdown").Mode;
-    editor.getSession().setMode(new mode());
-
+	editor.getSession().setMode("ace/mode/markdown");
+	editor.setTheme("ace/theme/monokai");
+	editor.setTheme("ace/theme/twilight");
+	editor.setTheme("ace/theme/textmate");
+	// var vim=require("ace/keyboard/vim").handler;
+	// editor.setKeyboardHandler(vim)
+	// editor.setKeyboardHandler('vim');
+ 
 	$.get('./cur.file',function(cur_file_content){
 		// alert(cur_file_content);
 	    editor.getSession().setValue(cur_file_content);
@@ -226,7 +232,7 @@ $(document).ready(function () {
     update(FORCE);
     onresize();
     setTimeout(function () {
-        change_theme('dark');
+        change_theme('dark1');
         onresize();
         resume_state();
     }, 10);
