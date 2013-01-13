@@ -137,6 +137,17 @@ $(document).ready(function () {
     $(window).resize(function (event) {
         onresize();
     });
+	
+	$.get('./meta.js',function(file_path){
+		alert(file_path);
+	  
+	    $.get('/Users/sang/mdpreview/sss',function(text){
+			alert(text);
+		}
+		//alert(t.name);
+	});
+	
+	
     editor = ace.edit("input");
     editor.getSession().setValue("the new text here");
     editor.getSession().setTabSize(4);

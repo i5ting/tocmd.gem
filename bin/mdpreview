@@ -1,8 +1,15 @@
 #!/usr/bin/env ruby  
   
 require 'mdpreview'  
+require 'pathname'
 # p ARGV
 # puts Mdpreview.hi(ARGV)
+
+# puts   __FILE__  
+# puts File.dirname(__FILE__)
+
+path = Pathname.new(File.dirname(__FILE__)).realpath.to_s
+p path
 
 require 'optparse'
 
@@ -24,7 +31,7 @@ option_parser = OptionParser.new do |opts|
   #下面的“value”就是用户使用时输入的argument
   opts.on('-f FileNAME', '--name Name', 'Pass-in file name') do |value|
     # options[:fname] = value
-    Mdpreview.hi(value)
+    Mdpreview.hi(path+'/'+value)
   end
 
   # Option 作为flag，带一组用逗号分割的arguments，用于将arguments作为数组解析
