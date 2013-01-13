@@ -1,6 +1,6 @@
 # Mdpreview
 
-TODO: Write a gem description
+this is a gem for preview and edit markdown file use brower.most time we like use teminal and vim,so i write this gem.
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+	$ mdpreview -f README.md
 
 ## Contributing
 
@@ -30,5 +30,13 @@ TODO: Write usage instructions here
 
 
 
-信息存储问题
-把当前文件---拷贝到执行目录下， 修改-----保存-----拷贝回原来文件
+v0.0.5
+完成了基本功能，打开编辑，实时预览。
+
+TODO
+v0.0.6
+
+支持vim
+支持保存和打开
+支持布局，左右全屏等
+
