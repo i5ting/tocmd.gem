@@ -1,1 +1,1 @@
-/Users/sang/mdpreview
+/Users/dudan/work/ruby/mdpreview/README.md

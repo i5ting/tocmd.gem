@@ -138,15 +138,7 @@ $(document).ready(function () {
         onresize();
     });
 	
-	$.get('./meta.js',function(file_path){
-		alert(file_path);
-	  
-	    $.get('/Users/sang/mdpreview/sss',function(text){
-			alert(text);
-		}
-		//alert(t.name);
-	});
-	
+
 	
     editor = ace.edit("input");
     editor.getSession().setValue("the new text here");
@@ -158,6 +150,13 @@ $(document).ready(function () {
     var mode = require("ace/mode/markdown").Mode;
     editor.getSession().setMode(new mode());
 
+	$.get('./cur.file',function(cur_file_content){
+		// alert(cur_file_content);
+	    editor.getSession().setValue(cur_file_content);
+		//alert(t.name);
+	});
+	
+	
     $('body').bind('dragover', function () {
         return false;    
     }).bind('dragend', function () {

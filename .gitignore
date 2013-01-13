@@ -13,3 +13,5 @@ pkg
 rdoc
 spec/reports
 tmp
+vendor/ed/cur.file
+vendor/ed/.DS_Store
