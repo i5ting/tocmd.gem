@@ -15,6 +15,6 @@ require "bundler/gem_tasks"
   
   desc 'test mdpreview.rb'
   task :exe do
-    sh 'ruby -Ilib bin/mdpreview -f sss'
+    sh 'ruby -Ilib bin/mdpreview -f sample.md'
   end
 # end
