@@ -1,3 +1,5 @@
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
+
 require "bundler/gem_tasks"
 
 # namespace :mdp do
@@ -13,8 +15,14 @@ require "bundler/gem_tasks"
     sh 'ruby test/mdptest.rb'
   end
   
-  desc 'test mdpreview.rb'
-  task :exe do
+  desc 'test open'
+  task :open do
     sh 'ruby -Ilib bin/mdpreview -f sample.md'
+  end
+  
+  desc 'test mdpreview.rb'
+  task :gempush   => ['build'] do
+    include Mdpreview
+    sh "gem push pkg/mdpreview-#{VERSION}.gem"
   end
 # end
