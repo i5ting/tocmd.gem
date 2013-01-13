@@ -1,6 +1,6 @@
 require "bundler/gem_tasks"
 
-namespace :mdp do
+# namespace :mdp do
   desc 'setup devise example migrating db and creating a default user'
   task :clean do
     ['d.txt'].each{|x|
@@ -32,27 +32,9 @@ namespace :mdp do
     puts 'Password: ' << admin.password
   end
   
-  # desc "Test lib source"
-  # Rake::TestTask.new(:lib) do |t|
-  #   t.libs << "test"
-  #   t.pattern = 'test/lib/**/*_test.rb'
-  #   t.verbose = true
-  # end
-end
-
-
-# namespace :test do
-#   desc "Test lib source"
-#   Rake::TestTask.new(:lib) do |t|
-#     t.libs << "test"
-#     t.pattern = 'test/lib/**/*_test.rb'
-#     t.verbose = true
-#   end
-#  
+  desc 'test mdpreview.rb'
+  task :test do
+    sh 'ruby test/mdptest.rb'
+  end
 # end
- 
-# lib_task = Rake::Task["test:lib"]
-# test_task = Rake::Task[:test]
-# test_task.enhance { lib_task.invoke }
-
 
