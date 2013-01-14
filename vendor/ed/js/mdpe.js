@@ -137,7 +137,8 @@ function load_source(file) {
 var editor = null;
 var can_update = true;
 $(document).ready(function () {
-    $(window).resize(function (event) {
+
+	$(window).resize(function (event) {
         onresize();
     });
 	
@@ -155,7 +156,7 @@ $(document).ready(function () {
 	// var vim=require("ace/keyboard/vim").handler;
 	// editor.setKeyboardHandler(vim)
 	// editor.setKeyboardHandler('vim');
- 
+    // alert(33);
 	$.get('./cur.file',function(cur_file_content){
 		// alert(cur_file_content);
 	    editor.getSession().setValue(cur_file_content);

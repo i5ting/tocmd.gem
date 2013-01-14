@@ -106,6 +106,7 @@ body {
     bottom:0;
     right:0;
     left: auto;
+/*	height:0%;*/
 }
 #container > .pane:first-child {
     left:0;

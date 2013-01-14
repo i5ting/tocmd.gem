@@ -1,1 +1,1 @@
-/Users/dudan/work/ruby/mdpreview/sample.md
+/Users/sang/mdpreview/sample.md
