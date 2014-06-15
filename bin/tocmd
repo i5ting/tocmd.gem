@@ -69,9 +69,9 @@ option_parser = OptionParser.new do |opts|
 		p value
    
 		if value == '.'
-			Mdpreview.hi_dir(src_p + '/' )
+			Tocmd.hi_dir(src_p + '/' )
 		else
-			Mdpreview.hi_dir(src_p + '/' + value)
+			Tocmd.hi_dir(src_p + '/' + value)
 		end
     
   end
