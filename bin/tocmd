@@ -47,14 +47,14 @@ option_parser = OptionParser.new do |opts|
 	ensure   
 	end 
 		
-	begin  
-		Dir.mkdir(File.join(src_p ,".toc"), 0700) #=> 0
-	rescue  
-	ensure  
-		f = File.new(File.join(vendor_path ,"template.html"), "w+").path
-		FileUtils.cp(f ,File.join(src_p ,".toc"))
-	end 
-	
+	# begin  
+	# 	Dir.mkdir(File.join(src_p ,".toc"), 0700) #=> 0
+	# rescue  
+	# ensure  
+	# 	f = File.new(File.join(vendor_path ,"template.html"), "w+").path
+	# 	FileUtils.cp(f ,File.join(src_p ,".toc"))
+	# end 
+	# 
   
   # Option 作为flag，带argument，用于将argument作为数值解析，比如"name"信息
   #下面的“value”就是用户使用时输入的argument
