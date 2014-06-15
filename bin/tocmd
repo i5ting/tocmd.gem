@@ -61,7 +61,7 @@ option_parser = OptionParser.new do |opts|
   opts.on('-f sourceFileNAME', '--name sourceFileNAME', 'Pass-in source file name') do |value|
     # options[:fname] = value
    
-    Mdpreview.hi(src_p + '/' + value)
+    Tocmd.hi(src_p + '/' + value)
   end
 	
   opts.on('-d dirNAME', '--name sourceFileNAME', 'Pass-in source file name') do |value|

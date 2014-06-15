@@ -1,5 +1,5 @@
 require "tocmd/version"
-require 'tocmd/translator' 
+require "tocmd/translator"
 
 module Tocmd
   # Your code goes here...
