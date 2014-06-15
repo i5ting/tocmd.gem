@@ -6,7 +6,7 @@ require 'rake'
 
 Gem::Specification.new do |gem|
   gem.name          = "tocmd"
-  gem.version       = Mdpreview::VERSION
+  gem.version       = Tocmd::VERSION
   gem.authors       = ["shiren1118"]
   gem.email         = ["shiren1118@126.com"]
   gem.description   = %q{convert markdown to html with toc plugin}
