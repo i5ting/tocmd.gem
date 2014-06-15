@@ -110,3 +110,14 @@ Create fake iPhone text conversations. Enter a conversation: Example: Dad: Your 
 Create fake iPhone text conversations. Enter a conversation: Example: Dad: Your mom and I are going to divorce next month. Son: Why ? Call me please. 
 
 
+## Table test
+
+v0.1.4
+
+|Keys|Value|
+|----|-----|
+|说明|检查用户是否已经登录|
+|网址|index.php?c=mobile&a=checklogin|
+|登录|FALSE|
+|参数|NULL|
+|返回|↓↓↓↓↓↓↓↓↓↓|

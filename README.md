@@ -21,16 +21,6 @@
 	tocmd -d .
 	
 	
-## Table test
-
-|Keys|Value|
-|----|-----|
-|说明|检查用户是否已经登录|
-|网址|index.php?c=mobile&a=checklogin|
-|登录|FALSE|
-|参数|NULL|
-|返回|↓↓↓↓↓↓↓↓↓↓|
-
 
 ## History
 
