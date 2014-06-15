@@ -2,7 +2,7 @@ require 'pathname'
 # require 'FileUtils'
 require 'fileutils'
 
-class Mdpreview::Translator  
+class Tocmd::Translator  
   def initialize(source_file_path) 
     #源文件路径
     @source_file_path = source_file_path    

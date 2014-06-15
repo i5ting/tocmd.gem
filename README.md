@@ -21,7 +21,7 @@
 	tocmd -d .
 	
 	
-## table test
+## Table test
 
 |Keys|Value|
 |----|-----|
