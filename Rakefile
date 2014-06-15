@@ -23,6 +23,6 @@ require "bundler/gem_tasks"
   desc 'test mdpreview.rb'
   task :gempush   => ['build'] do
     include Mdpreview
-    sh "gem push pkg/mdpreview-#{VERSION}.gem"
+    sh "gem push pkg/tocmd-#{VERSION}.gem"
   end
 # end
