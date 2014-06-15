@@ -1,1 +1,1 @@
-/Volumes/XP/git/tocmd.gem/README.md
+/Volumes/XP/git/tocmd.gem/sample.md
