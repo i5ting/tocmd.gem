@@ -1,35 +1,35 @@
-# tocmd is a ruby gem
+# Tocmd is a ruby gem
 
 tocmd 是一个ruby gem，用于把markdown文件生成带有toc目录的html文档。
 
-toc生成采用的jquery插件[i5ting_ztree_toc](https://github.com/i5ting/i5ting_ztree_toc)。
+根据h1到h6标题生成toc内容大纲，采用的jquery插件[i5ting_ztree_toc](https://github.com/i5ting/i5ting_ztree_toc)。
 
 ![](https://github.com/i5ting/i5ting_ztree_toc/raw/master/demo/3.png)
 
-## markdown生成步骤
+## Markdown生成步骤
 
 1. 生成.toc目录，把template.html拷贝进去
 1. 生成preview目录
 1. 编译markdown到preview目录
 1. 读取路径，将css和js举例增加到template中
 
-
-## 安装
+## 安装方法
 
 	gem intall tocmd
 	
-## 命令
+## 命令概览
 
 - tocmd 
 
-把用到的资源文件放到gem目录下，没有放到preview目录下使用方便，但是当你本地，可以节省空间，避免多次copy
+	把用到的资源文件放到gem目录下，没有放到preview目录下使用方便，但是当你本地，可以节省空间，避免多次copy
 
 - tocmd_local
 
-把用到的资源文件放到preview目录下
+	把用到的资源文件放到preview目录下
 
 ## 用法
 
+目前2个命令，参数都一样，分别如下
 
 ### tocmd
 
@@ -87,53 +87,7 @@ $.fn.ztree_toc.defaults = {
 	 */	
 	is_highlight_selected_line: true,
 	step: 100,
-	ztreeStyle: {
-		width:'260px',
-		overflow: 'auto',
-		position: 'fixed',
-		'z-index': 2147483647,
-		border: '0px none',
-		left: '0px',
-		bottom: '0px',
-		// height:'100px'
-	},
-	ztreeSetting: {
-		view: {
-			dblClickExpand: false,
-			showLine: true,
-			showIcon: false,
-			selectedMulti: false
-		},
-		data: {
-			simpleData: {
-				enable: true,
-				idKey : "id",
-				pIdKey: "pId",
-				// rootPId: "0"
-			}
-		},
-		callback: {
-			beforeClick: function(treeId, treeNode) {
-				$('a').removeClass('curSelectedNode');
-				if(treeNode.id == 1){
-					// TODO: when click root node
-					console.log('click root table of content');
-				}
-				if($.fn.ztree_toc.defaults.is_highlight_selected_line == true) {
-					$('#' + treeNode.id).css('color' ,'red').fadeOut("slow" ,function() {
-					    // Animation complete.
-						$(this).show().css('color','black');
-					});
-				}
-			},
-			onRightClick: function(event, treeId, treeNode) {
-				if(treeNode.id == 1){
-					// TODO: when right_click root node:table content
-					console.log('right_click root table of content');
-				}
-			}
-		}
-	}
+	.....................
 };
 ```
 
@@ -154,6 +108,10 @@ $.fn.ztree_toc.defaults = {
 	- 重构代码命名,把测试一道sample.md中
 - v0.1.4
 	- 增加table支持
+
+## 欢迎fork和反馈
+
+在issue提问或邮件shiren1118@126.com
 
 ## License
 
