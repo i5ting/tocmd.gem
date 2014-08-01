@@ -2,7 +2,7 @@ require 'pathname'
 # require 'FileUtils'
 require 'fileutils'
 
-class Tocmd::Translator  
+class Tocmd::TranslatorLocal  
   def initialize(source_file_path) 
     #源文件路径
     @source_file_path = source_file_path    
@@ -26,17 +26,21 @@ class Tocmd::Translator
 			dest_dir = ar.join('/').to_s
 			
 			puts "desc path = #{ar.join('/').to_s}"
+      
+      # copy vendor/toc to dest directory
+      `cp -rf #{@editor_path}/toc #{dest_dir}`
 			
+      # build now
 			build_with_dir(@source_file_path ,dest_dir)
 			
+      # if mac open in browser
 			open_in_browser
   end
 	
   def hi_dir
       generate_meta_js
       # cp_source_file_to_cur_file
-      
-			
+    
 			ar = @source_file_path.split('/')
 			# ar.pop()
 			
@@ -47,6 +51,9 @@ class Tocmd::Translator
 			dest_dir = ar.join('/').to_s
 			
 			puts "hi_dir desc path = #{ar.join('/').to_s}"
+      
+      # copy vendor/toc to dest directory
+      `cp -rf #{@editor_path}/toc #{dest_dir}/toc`
 			
 			build_with_dir(src_path ,dest_dir)
 			
@@ -135,15 +142,15 @@ class Tocmd::Translator
 		css_link = ''
 		if destiny_dir.to_s.index('/') 
 			css_link =  %Q{
-					<link href="#{@editor_path}/toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
-					<link href="#{@editor_path}/toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
-					<link href="#{@editor_path}/toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
 			}
 		else
 			css_link =  %Q{
-					<link href="#{@editor_path}/toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
-					<link href="#{@editor_path}/toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
-					<link href="#{@editor_path}/toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
 			}
 		end
 	
@@ -219,9 +226,9 @@ class Tocmd::Translator
 					</div>
 	      </body>
 	    </html>
-			<script type="text/javascript" src="#{@editor_path}/toc/js/jquery-1.4.4.min.js"></script>
-			<script type="text/javascript" src="#{@editor_path}/toc/js/jquery.ztree.all-3.5.min.js"></script>
-			<script type="text/javascript" src="#{@editor_path}/toc/js/ztree_toc.js"></script>
+			<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+			<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+			<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
 			<SCRIPT type="text/javascript" >
 			<!--
 			$(document).ready(function(){
