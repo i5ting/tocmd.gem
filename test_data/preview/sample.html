@@ -313,13 +313,18 @@ Suspendisse id sem consectetuer libero luctus adipiscing.</li>
 			<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
 			<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
 			<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+      <script type="text/javascript" src="toc_conf.js"></script>
+      
 			<SCRIPT type="text/javascript" >
 			<!--
 			$(document).ready(function(){
-				$('#tree').ztree_toc({
-					is_auto_number:true,
-					documment_selector:'.markdown-body'
-				});
+          var css_conf = eval(markdown_panel_style);
+          $('#readme').css(css_conf)
+          
+          var conf = eval(jquery_ztree_toc_opts);
+  				$('#tree').ztree_toc(conf);
+
+				
 			});
 			//-->
 			</SCRIPT>

@@ -20,16 +20,16 @@ tocmd 是一个ruby gem，用于把markdown文件生成带有toc目录的html文
 ## 命令概览
 
 - tocmd 
-
-	把用到的资源文件放到gem目录下，没有放到preview目录下使用方便，但是当你本地，可以节省空间，避免多次copy
-
+		把用到的资源文件放到gem目录下，没有放到preview目录下使用方便，但是当你本地，可以节省空间，避免多次copy
 - tocmd_local
-
-	把用到的资源文件放到preview目录下
+		把用到的资源文件放到preview目录下
+	
+- tocmd_conf
+		和tocmd_local是一样的，都是把js等资源文件放到当前目录下，差别在于读取toc_conf.js文件作为配置，这样利于多次编译markdown的时候一次配置。
 
 ## 用法
 
-目前2个命令，参数都一样，分别如下
+目前3个命令，参数都一样，分别如下
 
 ### tocmd
 
@@ -51,6 +51,34 @@ tocmd 是一个ruby gem，用于把markdown文件生成带有toc目录的html文
 指定目录
 
 	tocmd_local -d .
+	
+### tocmd_conf
+
+和tocmd_local是一样的，都是把js等资源文件放到当前目录下，差别在于读取toc_conf.js文件作为配置，
+这样利于多次编译markdown的时候一次配置。
+
+示例配置项
+
+	var jquery_ztree_toc_opts = {
+		debug:false,
+		is_auto_number:false,
+		documment_selector:'.markdown-body',
+		ztreeStyle: {
+			width:'290px',
+			overflow: 'auto',
+			position: 'fixed',
+			'z-index': 2147483647,
+			border: '0px none',
+			left: '0px',
+			top: '0px'
+		}
+	}
+	var markdown_panel_style = {
+		'width':'70%',
+		'margin-left':'20%'
+	};
+
+
 	
 ### 自定义修改i5ting_ztree_toc配置项
 
@@ -100,6 +128,8 @@ $.fn.ztree_toc.defaults = {
 	
 ## History
 
+- v0.3.0
+	- 增加了tocmd_conf命令，把用到的资源文件放到src目录下,增加`.toc_conf`
 - v0.2.0
 	- 增加了tocmd_local命令，把用到的资源文件放到preview目录下
 - v0.1.6

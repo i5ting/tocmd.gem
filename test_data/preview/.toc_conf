@@ -1,0 +1,14 @@
+{
+	debug:false,
+	is_auto_number:false,
+	documment_selector:'.markdown-body',
+	ztreeStyle: {
+		width:'290px',
+		overflow: 'auto',
+		position: 'fixed',
+		'z-index': 2147483647,
+		border: '0px none',
+		left: '0px',
+		top: '0px'
+	}
+}

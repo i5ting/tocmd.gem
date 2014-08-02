@@ -9,8 +9,8 @@ Gem::Specification.new do |gem|
   gem.version       = Tocmd::VERSION
   gem.authors       = ["shiren1118"]
   gem.email         = ["shiren1118@126.com"]
-  gem.description   = %q{convert markdown to html with toc plugin}
-  gem.summary       = %q{convert markdown to html with toc plugin}
+  gem.description   = %q{convert markdown to html with i5ting_ztree_toc plugin}
+  gem.summary       = %q{convert markdown to html with i5ting_ztree_toc plugin}
   gem.homepage      = "http://ruby-china.org/topics/17028"
   gem.files         = FileList['lib/**/*.rb',
                         'bin/*',
