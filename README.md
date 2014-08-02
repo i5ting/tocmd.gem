@@ -134,6 +134,8 @@ $.fn.ztree_toc.defaults = {
 	
 ## History
 
+- 0.3.1
+	- 修正创建toc_conf.js时shell问题
 - v0.3.0
 	- 增加了tocmd_conf命令，把用到的资源文件放到src目录下,增加`.toc_conf`
 - v0.2.0

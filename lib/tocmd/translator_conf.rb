@@ -70,7 +70,7 @@ class Tocmd::TranslatorConf
       puts 'toc_conf file exist'
     else
       # if file not exit,create toc_conf
-      `touch #{dest_dir}/toc_conf.js if ! -f #{dest_dir}/toc_conf.js`
+      `touch #{dest_dir}/toc_conf.js`
       
       # fill data to toc_conf.js
       `echo 'var jquery_ztree_toc_opts = {'>#{dest_dir}/toc_conf.js`
