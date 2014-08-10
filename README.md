@@ -134,6 +134,8 @@ $.fn.ztree_toc.defaults = {
 	
 ## History
 
+- 0.3.2
+	- 修正依赖问题，之前忘记加了，以为放到gemfile就可以呢，反思
 - 0.3.1
 	- 修正创建toc_conf.js时shell问题
 - v0.3.0
