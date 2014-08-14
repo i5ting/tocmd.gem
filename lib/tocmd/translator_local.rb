@@ -135,7 +135,7 @@ class Tocmd::TranslatorLocal
 		# options = [:fenced_code,:generate_toc,:hard_wrap,:no_intraemphasis,:strikethrough,:gh_blockcode,:autolink,:xhtml,:tables]
 
 		# convert to html
-		markdown = Redcarpet::Markdown.new(HTMLwithPygments,:gh_blockcode=>true,:no_intra_emphasis=>true,:filter_html => true,:hard_wrap => true,:autolink => false, :space_after_headers => true,:fenced_code_blocks => true,:tables => true)
+		markdown = Redcarpet::Markdown.new(HTMLwithPygments,:gh_blockcode=>true,:no_intra_emphasis=>true,:filter_html => true,:hard_wrap => true,:autolink => false, :space_after_headers => true,:fenced_code_blocks => true,:tables => true,:filter_html=>false)
 		parse_markdown = markdown.render(text)
 		# parse_markdown = syntax_highlighter(parse_markdown)
 	

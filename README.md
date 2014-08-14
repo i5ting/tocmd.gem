@@ -140,7 +140,8 @@ $.fn.ztree_toc.defaults = {
 	ruby -Ilib bin/tocmd_conf -f test_data/sample2.md  
 	
 ## History
-
+- 0.4.0
+	- 正式支持翻译英文文档
 - 0.3.2
 	- 修正依赖问题，之前忘记加了，以为放到gemfile就可以呢，反思
 - 0.3.1
