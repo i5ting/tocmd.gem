@@ -134,6 +134,11 @@ $.fn.ztree_toc.defaults = {
 	ruby -Ilib bin/tocmd_local -d test_data/dir
 	ruby -Ilib bin/tocmd_local -f test_data/sample.md
 	
+
+用于翻译
+
+	ruby -Ilib bin/tocmd_conf -f test_data/sample2.md  
+	
 ## History
 
 - 0.3.2

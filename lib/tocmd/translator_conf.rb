@@ -158,12 +158,12 @@ class Tocmd::TranslatorConf
 		# options = [:fenced_code,:generate_toc,:hard_wrap,:no_intraemphasis,:strikethrough,:gh_blockcode,:autolink,:xhtml,:tables]
 
 		# convert to html
-		markdown = Redcarpet::Markdown.new(HTMLwithPygments,:gh_blockcode=>true,:no_intra_emphasis=>true,:filter_html => true,:hard_wrap => true,:autolink => false, :space_after_headers => true,:fenced_code_blocks => true,:tables => true)
+		markdown = Redcarpet::Markdown.new(HTMLwithPygments,:gh_blockcode=>true,:no_intra_emphasis=>true,:filter_html => true,:hard_wrap => true,:autolink => false, :space_after_headers => true,:fenced_code_blocks => true,:tables => true,:filter_html=>false)
 		parse_markdown = markdown.render(text)
 		# parse_markdown = syntax_highlighter(parse_markdown)
 	
 		css_link = ''
-		if destiny_dir.to_s.index('/') 
+		if destiny_dir.to_s.index('/')
 			css_link =  %Q{
 					<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
 					<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
