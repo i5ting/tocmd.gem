@@ -76,7 +76,8 @@ tocmd 是一个ruby gem，用于把markdown文件生成带有toc目录的html文
 			'z-index': 2147483647,
 			border: '0px none',
 			left: '0px',
-			top: '0px'
+			top: '0px',
+			'height': $(window).height() + 'px'
 		}
 	}
 	var markdown_panel_style = {
@@ -85,6 +86,7 @@ tocmd 是一个ruby gem，用于把markdown文件生成带有toc目录的html文
 	};
 
 
+修改'height': $(window).height() + 'px'，这样就可以占满屏幕，支持tree的滑动
 	
 ### 自定义修改i5ting_ztree_toc配置项
 

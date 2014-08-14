@@ -9,7 +9,8 @@ var jquery_ztree_toc_opts = {
 		'z-index': 2147483647,
 		border: '0px none',
 		left: '0px',
-		top: '0px'
+		top: '0px',
+		'height': $(window).height() + 'px'
 	}
 }
 var markdown_panel_style = {
