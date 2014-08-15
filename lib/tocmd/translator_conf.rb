@@ -31,7 +31,7 @@ class Tocmd::TranslatorConf
       # copy vendor/toc to dest directory
       `cp -rf #{@editor_path}/toc #{dest_dir}`
       
-      _toc_config(dest_dir)
+      # _toc_config(dest_dir)
       
       # build now
 			build_with_dir(@source_file_path ,dest_dir)
@@ -58,7 +58,7 @@ class Tocmd::TranslatorConf
       # copy vendor/toc to dest directory
       `cp -rf #{@editor_path}/toc #{dest_dir}/toc`
 			
-      _toc_config(dest_dir)
+      # _toc_config(dest_dir)
       
 			build_with_dir(src_path ,dest_dir)
 			
@@ -252,7 +252,7 @@ class Tocmd::TranslatorConf
 			<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
 			<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
 			<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
-      <script type="text/javascript" src="toc_conf.js"></script>
+      <script type="text/javascript" src="toc/toc_conf.js"></script>
       
 			<SCRIPT type="text/javascript" >
 			<!--
