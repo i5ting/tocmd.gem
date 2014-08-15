@@ -140,6 +140,10 @@ $.fn.ztree_toc.defaults = {
 	ruby -Ilib bin/tocmd_conf -f test_data/sample2.md  
 	
 ## History
+
+
+- 0.4.1
+	- 不在生成toc_conf.js,而是直接使用toc/toc_conf.js
 - 0.4.0
 	- 正式支持翻译英文文档
 - 0.3.2
