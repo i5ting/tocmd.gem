@@ -140,6 +140,7 @@ $.fn.ztree_toc.defaults = {
 	ruby -Ilib bin/tocmd_conf -f test_data/sample2.md  
 	
 ## History
+
 - 0.4.0
 	- 正式支持翻译英文文档
 - 0.3.2
@@ -156,6 +157,16 @@ $.fn.ztree_toc.defaults = {
 	- 重构代码命名,把测试一道sample.md中
 - v0.1.4
 	- 增加table支持
+
+## Versioning
+
+maintained under the [Semantic Versioning](http://semver.org/) guidelines as much as possible:
+
+- Version number format is `<major>.<minor>.<patch>`
+- Breaking backward compatibility bumps the major (resetting minor and patch)
+- New additions without breaking backward compatibility bumps the minor (resetting patch)
+- Bug fixes and other changes bumps the patch
+
 
 ## 欢迎fork和反馈
 
