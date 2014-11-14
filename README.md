@@ -2,6 +2,9 @@
 
 tocmd 是一个ruby gem，用于把markdown文件生成带有toc目录的html文档。
 
+- [ruby版本tocmd](https://github.com/i5ting/tocmd.gem)
+- [node版本i5ting_toc](https://github.com/i5ting/tocmd.npm)
+
 `说明：目前代码比较乱，没有重构.....`
 
 根据h1到h6标题生成toc内容大纲，采用的jquery插件[i5ting_ztree_toc](https://github.com/i5ting/i5ting_ztree_toc)。
