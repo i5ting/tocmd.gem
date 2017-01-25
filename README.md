@@ -20,7 +20,7 @@ tocmd 是一个ruby gem，用于把markdown文件生成带有toc目录的html文
 
 ## 安装方法
 
-	gem intall tocmd
+	gem install tocmd
 	
 ## 命令概览
 
