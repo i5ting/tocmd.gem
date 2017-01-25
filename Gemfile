@@ -5,3 +5,4 @@ gemspec
 
 gem 'redcarpet'
 gem 'pygments.rb'
+gem 'os', '~> 0.9.6'

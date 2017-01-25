@@ -1,6 +1,7 @@
 require 'pathname' 
 # require 'FileUtils'
 require 'fileutils'
+require 'os'
 
 class Tocmd::TranslatorLocal  
   def initialize(source_file_path) 
@@ -62,28 +63,22 @@ class Tocmd::TranslatorLocal
   
   def open_in_browser
 		ar = @source_file_path.split('/')
+		src_path = ar.join('/').to_s
 
 		if File.directory?(@source_file_path) == false #普通文件
-				file_name = ar.pop().split('.')[0]
-				src_path = ar.join('/').to_s
-
-				ar.push('preview');
-				dest_dir = ar.join('/').to_s		
-				
-				`open #{ar.join('/').to_s}/#{file_name}.html`		
-		
+			file_name = ar.pop().split('.')[0]
 		else  
-			# 目录
-			src_path = ar.join('/').to_s
-
 			Dir.foreach(src_path) do |ff| 
 				file_name = ff.split('.')[0]
 			end
-		
-			ar.push('preview');
-			dest_dir = ar.join('/').to_s		
-			`open #{ar.join('/').to_s}/#{file_name}.html`		
 		end
+
+		ar.push('preview');
+		dest_dir = ar.join('/').to_s
+		open_file_name = "#{ar.join('/').to_s}/#{file_name}.html"
+
+
+		OS.linux? ? `xdg-open #{ open_file_name }` : ` open #{ open_file_name }`
   end
   
   def generate_meta_js
