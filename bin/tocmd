@@ -3,20 +3,10 @@
 
 require 'tocmd'  
 require 'pathname'
-# p ARGV
-# puts Mdpreview.hi(ARGV)
-# 
-# puts   __FILE__  
-# puts File.dirname(__FILE__)
-
+require 'optparse'
 
 # File.join(File.dirname(__FILE__), '..', 'lib')
 path = Pathname.new(File.join(File.dirname(__FILE__), '..')).realpath.to_s
-
-# p "开始#{Dir.pwd}"
-# p "path = #{path}"
-
-require 'optparse'
 
 options = {}
 option_parser = OptionParser.new do |opts|
@@ -46,40 +36,28 @@ option_parser = OptionParser.new do |opts|
 	rescue  
 	ensure   
 	end 
-		
-	# begin  
-	# 	Dir.mkdir(File.join(src_p ,".toc"), 0700) #=> 0
-	# rescue  
-	# ensure  
-	# 	f = File.new(File.join(vendor_path ,"template.html"), "w+").path
-	# 	FileUtils.cp(f ,File.join(src_p ,".toc"))
-	# end 
-	# 
   
   # Option 作为flag，带argument，用于将argument作为数值解析，比如"name"信息
   #下面的“value”就是用户使用时输入的argument
-  opts.on('-f sourceFileNAME', '--name sourceFileNAME', 'Pass-in source file name') do |value|
-    # options[:fname] = value
-   
-    Tocmd.hi(src_p + '/' + value)
+  opts.on('-f sourceFileNAME', '--file sourceFileNAME', 'Pass-in source file name') do |value|
+    options[:fname] = src_p + '/' + value
   end
 	
-  opts.on('-d dirNAME', '--name sourceFileNAME', 'Pass-in source file name') do |value|
-    # options[:fname] = value
-		p value
-   
-		if value == '.'
-			Tocmd.hi_dir(src_p + '/' )
-		else
-			Tocmd.hi_dir(src_p + '/' + value)
-		end
-    
+  # 目录参数
+  opts.on('-d sourceDirNAME', '--directory sourceDirNAME', 'Pass-in source directory name') do |value|
+		options[:dname] = value == '.' ? (src_p + '/') : (src_p + '/' + value)    
   end
 
-  # Option 作为flag，带一组用逗号分割的arguments，用于将arguments作为数组解析
-  # opts.on('-a A,B', '--array A,B', Array, 'List of arguments') do |value|
-  #    options[:array] = value
-  #  end
+  # 是否需要浏览器打开参数
+  opts.on('', '--no-browser', 'Not open with browser after translate') do |_value|
+  	Tocmd.set_no_browser(true)
+  end
 end.parse!
 
-# puts options.inspect
+if options.has_key?(:fname) && !options[:fname].nil? && options[:fname] != ''
+  Tocmd.hi(options[:fname])
+end
+
+if options.has_key?(:dname) && !options[:dname].nil? && options[:dname] != ''
+  Tocmd.hi_dir(options[:dname])
+end

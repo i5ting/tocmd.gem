@@ -21,4 +21,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.add_dependency "redcarpet"
   gem.add_dependency "pygments.rb"
+  gem.add_dependency 'os'
 end

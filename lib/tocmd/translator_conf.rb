@@ -14,7 +14,7 @@ class Tocmd::TranslatorConf
 
   end
   
-  def hi
+  def hi(no_browser)
       generate_meta_js
       # cp_source_file_to_cur_file
       
@@ -37,11 +37,10 @@ class Tocmd::TranslatorConf
       # build now
 			build_with_dir(@source_file_path ,dest_dir)
 			
-      # if mac open in browser
-			open_in_browser
+			open_in_browser unless no_browser
   end
 	
-  def hi_dir
+  def hi_dir(no_browser)
       generate_meta_js
       # cp_source_file_to_cur_file
     
@@ -63,7 +62,7 @@ class Tocmd::TranslatorConf
       
 			build_with_dir(src_path ,dest_dir)
 			
-			open_in_browser
+			open_in_browser unless no_browser
   end
   
   def _toc_config(dest_dir)
