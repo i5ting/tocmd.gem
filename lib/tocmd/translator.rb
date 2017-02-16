@@ -13,7 +13,7 @@ class Tocmd::Translator
     @editor_path =  Pathname.new(File.expand_path('../../../vendor', __FILE__)).realpath.to_s  
   end  
   
-  def hi
+  def hi(no_browser)
       generate_meta_js
       # cp_source_file_to_cur_file
       
@@ -30,14 +30,13 @@ class Tocmd::Translator
 			
 			build_with_dir(@source_file_path ,dest_dir)
 			
-			open_in_browser
+			open_in_browser unless no_browser
   end
 	
-  def hi_dir
+  def hi_dir(no_browser)
       generate_meta_js
       # cp_source_file_to_cur_file
       
-			
 			ar = @source_file_path.split('/')
 			# ar.pop()
 			
@@ -51,7 +50,7 @@ class Tocmd::Translator
 			
 			build_with_dir(src_path ,dest_dir)
 			
-			open_in_browser
+			open_in_browser unless no_browser
   end
   
   def open_in_browser
